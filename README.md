@@ -1,4 +1,4 @@
-# ElenkhosServe
+# tiny-serve
 
 A scalable Python inference engine for Qwen models.
 
