@@ -24,7 +24,7 @@ You should see all tests pass.
 ## Structure
 
 ```text
-src/elenkhos_serve/
+src/tiny_serve/
 ├── config/      # Model and runtime configuration
 ├── model/       # Owned Qwen architecture and weight loading
 ├── cache/       # KV cache (simple now, paged later)

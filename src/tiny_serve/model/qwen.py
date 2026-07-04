@@ -3,9 +3,9 @@ from __future__ import annotations
 import torch
 from torch import nn
 
-from elenkhos_serve.config import QwenConfig
-from elenkhos_serve.model.attention import QwenAttention
-from elenkhos_serve.model.layers import (
+from tiny_serve.config import QwenConfig
+from tiny_serve.model.attention import QwenAttention
+from tiny_serve.model.layers import (
     RMSNorm,
     RotaryEmbedding,
     SwiGLUMLP,

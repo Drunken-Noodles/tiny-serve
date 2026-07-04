@@ -7,7 +7,7 @@ from pathlib import Path
 import torch
 from safetensors import safe_open
 
-from elenkhos_serve.model.qwen import QwenForCausalLM
+from tiny_serve.model.qwen import QwenForCausalLM
 
 
 @dataclass(frozen=True)

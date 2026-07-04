@@ -1,5 +1,5 @@
 [project]
-name = "elenkhos-serve"
+name = "tiny-serve"
 version = "0.1.0"
 description = "A scalable Python inference engine for Qwen models"
 readme = "README.md"
@@ -26,7 +26,7 @@ build-backend = "hatchling.build"
 dev-mode-dirs = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/elenkhos_serve"]
+packages = ["src/tiny_serve"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

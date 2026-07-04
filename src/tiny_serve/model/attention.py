@@ -3,8 +3,8 @@ from __future__ import annotations
 import torch
 from torch import nn
 
-from elenkhos_serve.config import QwenConfig
-from elenkhos_serve.model.layers import RMSNorm, apply_rope
+from tiny_serve.config import QwenConfig
+from tiny_serve.model.layers import RMSNorm, apply_rope
 
 
 def repeat_kv(

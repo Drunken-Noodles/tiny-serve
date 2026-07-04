@@ -5,8 +5,8 @@ from pathlib import Path
 import torch
 from safetensors.torch import save_file
 
-from elenkhos_serve.config import QwenConfig
-from elenkhos_serve.model import (
+from tiny_serve.config import QwenConfig
+from tiny_serve.model import (
     QwenForCausalLM,
     load_hf_weights,
 )

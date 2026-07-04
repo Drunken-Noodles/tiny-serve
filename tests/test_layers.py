@@ -3,7 +3,7 @@ import math
 import torch
 import torch.nn.functional as F
 
-from elenkhos_serve.model.layers import (
+from tiny_serve.model.layers import (
     RMSNorm,
     RotaryEmbedding,
     SwiGLUMLP,

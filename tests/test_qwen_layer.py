@@ -1,8 +1,8 @@
 import torch
 
-from elenkhos_serve.config import QwenConfig
-from elenkhos_serve.model.layers import RotaryEmbedding
-from elenkhos_serve.model.qwen import QwenDecoderLayer
+from tiny_serve.config import QwenConfig
+from tiny_serve.model.layers import RotaryEmbedding
+from tiny_serve.model.qwen import QwenDecoderLayer
 
 
 def make_tiny_qwen3_config() -> QwenConfig:

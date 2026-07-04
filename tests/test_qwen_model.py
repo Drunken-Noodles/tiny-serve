@@ -1,7 +1,7 @@
 import torch
 
-from elenkhos_serve.config import QwenConfig
-from elenkhos_serve.model import (
+from tiny_serve.config import QwenConfig
+from tiny_serve.model import (
     QwenForCausalLM,
     QwenModel,
 )
