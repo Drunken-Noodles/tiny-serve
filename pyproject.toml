@@ -4,13 +4,26 @@ version = "0.1.0"
 description = "A scalable Python inference engine for Qwen models"
 readme = "README.md"
 requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24",
+    "safetensors>=0.4",
+    "torch>=2.0",
+]
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0"]
+dev = [
+    "pytest>=8.0",
+]
+download = [
+    "huggingface_hub>=0.20",
+]
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[tool.hatch.build]
+dev-mode-dirs = ["src"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/elenkhos_serve"]
@@ -18,3 +31,6 @@ packages = ["src/elenkhos_serve"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+filterwarnings = [
+    "ignore:Failed to initialize NumPy:UserWarning",
+]

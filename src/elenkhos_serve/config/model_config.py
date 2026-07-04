@@ -30,6 +30,7 @@ class QwenConfig:
 
     tie_word_embeddings: bool
     use_qk_norm: bool
+    attention_bias: bool
 
     @property
     def num_kv_groups(self) -> int:
@@ -128,7 +129,17 @@ class QwenConfig:
             rope_theta=float(raw.get("rope_theta", 1_000_000.0)),
             max_position_embeddings=int(raw["max_position_embeddings"]),
             tie_word_embeddings=bool(raw.get("tie_word_embeddings", True)),
-            use_qk_norm=bool(raw.get("use_qk_norm", False)),
+
+            # Qwen3 config.json does not explicitly store use_qk_norm,
+            # but Qwen3 architecture uses q_norm and k_norm.
+            use_qk_norm=bool(
+                raw.get(
+                    "use_qk_norm",
+                    raw.get("model_type") == "qwen3",
+                )
+            ),
+
+            attention_bias=bool(raw.get("attention_bias", False)),
         )
 
         config.validate()

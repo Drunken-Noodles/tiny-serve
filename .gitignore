@@ -37,3 +37,6 @@ htmlcov/
 
 reports/*.md
 !reports/.gitkeep
+
+checkpoints/
+*.safetensors

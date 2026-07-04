@@ -17,6 +17,7 @@ def make_qwen3_config() -> QwenConfig:
         max_position_embeddings=32_768,
         tie_word_embeddings=True,
         use_qk_norm=True,
+        attention_bias=False,
     )
 
 
@@ -42,6 +43,7 @@ def test_invalid_gqa_config_fails_early() -> None:
         max_position_embeddings=512,
         tie_word_embeddings=True,
         use_qk_norm=False,
+        attention_bias=False,
     )
 
     with pytest.raises(ValueError, match="divisible"):

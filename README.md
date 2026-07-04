@@ -15,10 +15,11 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 
 # Run tests
-pytest tests/test_model_config.py
+python -m pytest tests/ -q
 ```
 
-You should see `2 passed`.
+You should see all tests pass.
+
 
 ## Structure
 
@@ -39,6 +40,10 @@ src/elenkhos_serve/
 Week 1–2 foundation:
 
 - `config/model_config.py` — `QwenConfig` with derived GQA sizes, validation, and Hugging Face `config.json` loading
+- `model/layers.py` — `RMSNorm`, `SwiGLUMLP`, `RotaryEmbedding`, `rotate_half`, `apply_rope`
+- `model/attention.py` — `QwenAttention` with QK-norm, RoPE, GQA, and eager causal attention
+- `model/qwen.py` — `QwenDecoderLayer`, `QwenModel`, `QwenForCausalLM` (embedding → layers → norm → logits)
+- `model/loader.py` — strict Hugging Face safetensors loading with tied-weight alias handling
 
 ## Roadmap
 
