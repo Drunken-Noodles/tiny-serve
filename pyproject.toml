@@ -17,6 +17,9 @@ dev = [
 download = [
     "huggingface_hub>=0.20",
 ]
+bench = [
+    "transformers>=4.0",
+]
 
 [build-system]
 requires = ["hatchling"]

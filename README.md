@@ -7,18 +7,26 @@ A scalable Python inference engine for Qwen models.
 From the `tiny-serve/` directory:
 
 ```bash
-# Create and activate a virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
-
-# Install the package in editable mode with dev dependencies
-pip install -e ".[dev]"
-
-# Run tests
-python -m pytest tests/ -q
+# Create .venv and install the package with test dependencies
+uv sync --extra dev
 ```
 
-You should see all tests pass.
+## Common commands
+
+Run all commands from the `tiny-serve/` directory.
+
+```bash
+# Run the test suite
+uv run pytest tests/ -q
+
+# Run the Hugging Face Qwen baseline benchmark
+uv run --extra bench python -m tiny_serve.bench.hf_qwen3
+
+# Refresh uv.lock after changing dependencies in pyproject.toml
+uv lock
+```
+
+Use `uv run ...` for project commands so they run inside the managed `.venv`.
 
 
 ## Structure
@@ -34,6 +42,11 @@ src/tiny_serve/
 ├── bench/       # Benchmark metrics and harness
 └── tokenizer/   # Tokenizer adapters
 ```
+
+## Benchmarks
+
+The benchmark command uses the `bench` optional dependency group and downloads
+the Qwen model through Hugging Face on first run.
 
 ## Current progress
 

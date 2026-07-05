@@ -89,6 +89,8 @@ elenkhos-serve/
 │       │
 │       ├── bench/
 │       │   ├── __init__.py
+│       │   ├── hf_qwen3.py
+│       │   ├── instruction.md
 │       │   ├── metrics.py
 │       │   ├── traces.py
 │       │   └── harness.py
@@ -99,7 +101,6 @@ elenkhos-serve/
 │
 ├── tests/
 ├── scripts/
-├── benchmarks/
 ├── reports/
 ├── docs/
 ├── pyproject.toml
