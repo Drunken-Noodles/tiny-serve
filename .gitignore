@@ -40,3 +40,5 @@ reports/*.md
 
 checkpoints/
 *.safetensors
+
+AGENTS.md
